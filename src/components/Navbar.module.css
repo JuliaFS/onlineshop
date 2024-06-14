@@ -1,0 +1,16 @@
+.navbar{
+    background-color: aquamarine;
+}
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1.5em;
+    margin-top: 0;
+}
+ul li{
+    display: flex;
+}
