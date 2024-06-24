@@ -1,7 +1,16 @@
 //if import from folder
 import product1 from './assets/product1.png';
 
-export const PRODUCTS = [
+export interface Product {
+        id: number,
+        productName: string,
+        price: number,
+        productImage: string
+    }
+    // Add other products as needed
+
+
+export const PRODUCTS: Product[] = [
     {
         id: 1,
         productName: 'Product1',

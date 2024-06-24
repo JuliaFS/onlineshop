@@ -1,6 +1,11 @@
-import React from "react";
+import { React } from "react";
+import { Product } from "../../products";
 
-export const Product = (props) => {
+interface ProductProps {
+    data: Product;
+  }
+
+export const Products = (props : ProductProps) => {
     const { id, productName, price, productImage } = props.data;
     return(
         <div className='product'>
