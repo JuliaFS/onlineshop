@@ -1,6 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-import { PRODUCTS, Product } from "../products";
-import { Products } from "../pages/shop/Products";
+import { PRODUCTS } from "../products";
 
 interface Cart {
     [key: string]: number;
@@ -62,7 +61,7 @@ export const ShopContextProvider = (props: ShopProviderProps) => {
     setCartItems(getDefaultCart());
   };
 
-  const contextValue : ShopContextType = {
+const contextValue : ShopContextType = {
     cartItems,
     addToCart,
     updateCartItemCount,

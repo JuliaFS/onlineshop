@@ -1,5 +1,5 @@
 import { PRODUCTS } from '../../products';
-import { Product } from './Products';
+import { Products } from './Products';
 import './shop.css';
 
 export const Shop = () => {
@@ -10,7 +10,9 @@ export const Shop = () => {
             </div>
             <div className='products'>
                 { PRODUCTS.map((product) => (
-                    <Product data={product} />
+                    <div key={product.id}>
+                        <Products data={product} />
+                    </div>
                 ))}
             </div>
         </div>
