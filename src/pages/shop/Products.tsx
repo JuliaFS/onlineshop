@@ -1,4 +1,3 @@
-import { React } from "react";
 import { Product } from "../../products";
 
 interface ProductProps {
@@ -6,12 +5,12 @@ interface ProductProps {
   }
 
 export const Products = (props : ProductProps) => {
-    const { productName, price, productImage } = props.data;
+    const { title, price, image } = props.data;
     return(
         <div className='product'>
-            <img src={productImage} alt={productName} />
+            <img src={image} alt={title} />
             <div className='description'>
-                <p><b>{productName}</b></p>
+                <p><b>{title}</b></p>
                 <p>${price}</p>
             </div>
             <button className='addToCartBttn'>Add to Cart</button>
