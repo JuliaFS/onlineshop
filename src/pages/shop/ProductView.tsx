@@ -4,11 +4,11 @@ interface ProductProps {
     data: Product;
   }
 
-export const Products = (props : ProductProps) => {
+export const ProductView = (props : ProductProps) => {
     const { title, price, image } = props.data;
     return(
-        <div className='product'>
-            <img src={image} alt={title} />
+        <div className='flex flex-col'>
+            <img src={image} alt={title} className="h-48 w-auto object-contain"/>
             <div className='description'>
                 <p><b>{title}</b></p>
                 <p>${price}</p>
