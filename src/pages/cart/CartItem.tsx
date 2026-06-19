@@ -11,24 +11,46 @@ export const CartItem = (props: ShopProviderProps) => {
     useShopCart();
 
   return (
-    <div className="cartItem">
-      <img src={image} alt={title} />
-      <div className="description">
-        <p>
-          <b>{title}</b>
-        </p>
-        <p> Price: ${price}</p>
-        <div className="countHandler">
-          <button onClick={() => removeFromCart(id)}> - </button>
-          <input
-            type="number"
-            min="0"
-            value={cartItems[id] ?? 0}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
-          />
-          <button onClick={() => addToCart(id)}> + </button>
-        </div>
-      </div>
-    </div>
+    <div className="flex items-center gap-4 m-2">
+  <img
+    src={image}
+    alt={title}
+    className="h-20 w-20 object-contain"
+  />
+
+  <div className="flex flex-col flex-1">
+    <p>
+      <b>{title}</b>
+    </p>
+
+    <p>Price: ${price}</p>
+  </div>
+
+  <div className="flex items-center justify-center border">
+    <button
+      className="bg-gray-200 w-8 h-8"
+      onClick={() => removeFromCart(id)}
+    >
+      -
+    </button>
+
+    <input
+      type="number"
+      min="0"
+      value={cartItems[id] ?? 0}
+      onChange={(e) =>
+        updateCartItemCount(Number(e.target.value), id)
+      }
+      className="w-12 text-center"
+    />
+
+    <button
+      className="bg-gray-200 h-8 w-8"
+      onClick={() => addToCart(id)}
+    >
+      +
+    </button>
+  </div>
+</div>
   );
 };

@@ -18,33 +18,41 @@ export const Cart = () => {
   }
 
   return (
-    <div className="cart">
+    <div className="w-1/3 m-auto p-4 flex flex-col items-center">
       <div>
-        <h1>Your Cart Items</h1>
+        <h3 className="text-3xl font-bold text-center">Your Cart Items</h3>
       </div>
-      <div className="cart">
+      <div className="flex flex-col">
         {products.map((product) =>
           (cartItems[product.id] ?? 0) > 0 ? (
             <CartItem key={product.id} data={product} />
-          ) : null
+          ) : null,
         )}
       </div>
 
       {totalAmount > 0 ? (
-        <div className="checkout">
-          <p>Subtotal: ${totalAmount}</p>
-          <button onClick={() => navigate("/")}>Continue Shopping</button>
-          <button
-            onClick={() => {
-              checkout();
-              navigate("/checkout");
-            }}
-          >
-            Checkout
-          </button>
+        <div className="flex flex-col items-end w-full">
+          <p className="my-6">Subtotal: ${totalAmount}</p>
+          <div className="flex gap-4">
+            <button
+              className="p-2 rounded-sm bg-green-300 hover:bg-green-400"
+              onClick={() => navigate("/")}
+            >
+              Continue Shopping
+            </button>
+            <button
+              onClick={() => {
+                checkout();
+                navigate("/checkout");
+              }}
+              className="p-2 rounded-sm bg-green-300 hover:bg-green-400"
+            >
+              Checkout
+            </button>
+          </div>
         </div>
       ) : (
-        <h1>Your Shopping Cart is Empty</h1>
+        <h3 className="pt-5">Your Shopping Cart is Empty</h3>
       )}
     </div>
   );
